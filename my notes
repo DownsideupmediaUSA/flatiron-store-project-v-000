@@ -1,0 +1,16 @@
+Checklist:
+
+
+1. use Devise to build out Models/Relationships -
+2. run migrations
+3.build user relationships
+4.build routes & controller methods
+5.use Devise for views
+6.add seed data
+
+
+Objectives
+
+Build authentication
+build out architecture
+build out functionality

@@ -1,8 +1,8 @@
-class CartsController < ApplicationController
-  before_action :set_cart, only: [:show, :edit, :update, :destroy]
+class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def show
-      @items = current_user.current_cart.items
+    @items = current_user.current_cart.items
   end
 
   def checkout
@@ -12,12 +12,13 @@ class CartsController < ApplicationController
   end
 
   private
+
   def set_cart
     @cart = Cart.find(params[:id])
   end
 
   def remove_item
-    current_user.current_cart.line_items.each do |item|
+    current_user.current_cart.line_items each do |item|
       @item = Item.find(item.item_id)
       @item.inventory -= item.quantity
       @item.save
